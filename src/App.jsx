@@ -1,10 +1,14 @@
 import "./App.scss";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import ProductsPage from "./pages/ProductsPage/ProductsPage";
 
 function App() {
   return (
-    <>
-      <h1>Fresh Rituals</h1>
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/products" element={<ProductsPage />}></Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
