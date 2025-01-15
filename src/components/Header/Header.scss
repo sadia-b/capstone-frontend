@@ -1,2 +1,49 @@
 @use "../../styles/partials/variables" as *;
 @use "../../styles/partials/typography" as *;
+@use "../../styles/partials/mixins" as *;
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 5.2637rem;
+  border-bottom: 1px solid $primary-colour;
+}
+
+.logo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+
+  &__link {
+    @include link-styling;
+  }
+
+  &__title {
+    font-weight: 400;
+  }
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 2rem;
+  list-style: none;
+
+  &__list-item {
+    margin: 0 0.5rem;
+    @include link-styling;
+
+    &:hover {
+      cursor: pointer;
+      font-weight: 700;
+    }
+
+    &--active {
+      font-weight: 700;
+      border-bottom: 1px solid $secondary-colour;
+    }
+  }
+}

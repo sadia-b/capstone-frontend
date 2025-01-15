@@ -1,0 +1,7 @@
+@use "./variables" as *;
+
+@mixin link-styling {
+  text-decoration: none;
+  color: $text-colour;
+  cursor: pointer;
+}

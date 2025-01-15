@@ -1,5 +1,4 @@
 import Header from "../../components/Header/Header";
-import PlantSVG from "../../components/PlantSVG/PlantSVG";
 import ProductCard from "../../components/ProductCard/ProductCard";
 
 export default function ProductsPage() {
