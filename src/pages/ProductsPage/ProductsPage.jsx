@@ -1,4 +1,3 @@
-import Header from "../../components/Header/Header";
 import ProductCard from "../../components/ProductCard/ProductCard";
 
 export default function ProductsPage() {
@@ -18,7 +17,6 @@ export default function ProductsPage() {
 
   return (
     <div>
-      <Header />
       <ProductCard product={product} />
     </div>
   );

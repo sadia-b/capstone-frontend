@@ -4,4 +4,34 @@
 .product {
   box-sizing: border-box;
   background-color: $secondary-colour;
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-bottom: 1rem;
+  border-radius: 20px;
+  box-shadow: 1px 1px 10px grey;
+
+  &__img {
+    height: 230px;
+    margin-bottom: 16px;
+    border-radius: 20px 20px 0 0;
+  }
+
+  &__details {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    background-color: $secondary-colour;
+    padding: 0 8px;
+  }
+
+  &__text {
+    min-width: 2rem;
+    margin: 0.25rem;
+    border-radius: 8px;
+    padding: 4px 8px;
+  }
 }

@@ -1,13 +1,10 @@
-import { Link, useLocation } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import "./Header.scss";
 
 export default function Header() {
-  const location = useLocation();
-  const { pathname } = location;
-
   return (
     <div className="header">
-      <Link to="/" className="logo__link">
+      <NavLink to="/" className="logo__link">
         <div className="logo">
           <svg
             className="logo__svg"
@@ -55,32 +52,32 @@ export default function Header() {
           </svg>
           <h4 className="logo__title">Fresh Rituals</h4>
         </div>
-      </Link>
+      </NavLink>
       <ul className="navbar">
-        <Link
+        <NavLink
           to="/my-products"
-          className={`navbar__list-item ${
-            pathname === "/my-products" ? "navbar__list-item--active" : ""
-          }`}
+          className={({ isActive }) =>
+            `navbar__list-item ${isActive ? "navbar__list-item--active" : ""}`
+          }
         >
           My Products
-        </Link>
-        <Link
-          to="/"
-          className={`navbar__list-item ${
-            pathname === "/products" ? "navbar__list-item--active" : ""
-          }`}
+        </NavLink>
+        <NavLink
+          to="/products"
+          className={({ isActive }) =>
+            `navbar__list-item ${isActive ? "navbar__list-item--active" : ""}`
+          }
         >
           Products
-        </Link>
-        <Link
+        </NavLink>
+        <NavLink
           to="/quiz"
-          className={`navbar__list-item ${
-            pathname === "/quiz" ? "navbar__list-item--active" : ""
-          }`}
+          className={({ isActive }) =>
+            `navbar__list-item ${isActive ? "navbar__list-item--active" : ""}`
+          }
         >
           Skincare Quiz
-        </Link>
+        </NavLink>
       </ul>
     </div>
   );
