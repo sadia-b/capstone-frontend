@@ -85,35 +85,39 @@ export default function QuizPage() {
             <div className="quiz__flex">
               <div
                 className={`quiz__option ${
-                  concern === "acne" ? "quiz__option--active" : ""
+                  concern === "Acne" ? "quiz__option--active" : ""
                 }`}
-                onClick={() => setConcern(concern === "acne" ? "" : "acne")}
+                onClick={() => setConcern(concern === "Acne" ? "" : "Acne")}
               >
                 Acne
               </div>
               <div
                 className={`quiz__option ${
-                  concern === "oils" ? "quiz__option--active" : ""
+                  concern === "Oiliness" ? "quiz__option--active" : ""
                 }`}
-                onClick={() => setConcern(concern === "oils" ? "" : "oils")}
+                onClick={() =>
+                  setConcern(concern === "Oiliness" ? "" : "Oiliness")
+                }
               >
                 Excess Oils
               </div>
               <div
                 className={`quiz__option ${
-                  concern === "dryness" ? "quiz__option--active" : ""
+                  concern === "Dryness" ? "quiz__option--active" : ""
                 }`}
                 onClick={() =>
-                  setConcern(concern === "dryness" ? "" : "dryness")
+                  setConcern(concern === "Dryness" ? "" : "Dryness")
                 }
               >
                 Dryness
               </div>
               <div
                 className={`quiz__option ${
-                  concern === "aging" ? "quiz__option--active" : ""
+                  concern === "Anti-Aging" ? "quiz__option--active" : ""
                 }`}
-                onClick={() => setConcern(concern === "aging" ? "" : "aging")}
+                onClick={() =>
+                  setConcern(concern === "Anti-Aging" ? "" : "Anti-Aging")
+                }
               >
                 Anti-Aging
               </div>

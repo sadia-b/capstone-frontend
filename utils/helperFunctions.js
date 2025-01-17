@@ -12,4 +12,12 @@ const fetchProducts = async (stateVariable) => {
   return stateVariable;
 };
 
-export { fetchProducts };
+const fetchProductsByConcern = async (stateVariable, productConcern) => {
+  try {
+    const response = await axios.get(`${baseURL}/products/${productConcern}`);
+    stateVariable(response.data);
+  } catch (error) {
+    console.log(`Error retrieving products: ${error}`);
+  }
+};
+export { fetchProducts, fetchProductsByConcern };
