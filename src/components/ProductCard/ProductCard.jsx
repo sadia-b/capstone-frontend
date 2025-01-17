@@ -5,7 +5,7 @@ export default function ProductCard({ product }) {
     <div className="product">
       <img
         className="product__img"
-        src="src\assets\images\tatcha_cleanser.webp"
+        src={`http://localhost:8080/${product.photo}`}
         alt={product.photoDescription}
       />
       <div className="product__details">
