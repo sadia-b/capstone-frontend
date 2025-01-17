@@ -36,6 +36,12 @@
     padding: 4px 8px;
   }
 
+  &__like {
+    &--active {
+      fill: $accent-colour;
+    }
+  }
+
   &__link {
     font-size: 0.75rem;
     @include link-styling;
