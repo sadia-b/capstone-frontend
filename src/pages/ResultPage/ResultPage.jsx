@@ -1,9 +1,8 @@
-import { useLocation } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import "./ResultPage.scss";
 
 export default function ResultPage() {
-  const location = useLocation();
-  const { concern } = location.state || {};
+  const { concern } = useParams();
 
   return (
     <div className="results">

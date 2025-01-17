@@ -17,7 +17,7 @@ export default function QuizPage() {
     }
 
     setError("");
-    navigate("/results", { state: { concern } });
+    navigate(`/results/${concern}`);
     console.log(type);
     console.log(concern);
 

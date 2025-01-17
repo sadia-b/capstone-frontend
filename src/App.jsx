@@ -14,7 +14,7 @@ function App() {
         <Route path="/" element={<HomePage />}></Route>
         <Route path="/quiz" element={<QuizPage />}></Route>
         <Route path="/products" element={<ProductsPage />}></Route>
-        <Route path="/results" element={<ResultPage />}></Route>
+        <Route path="/results/:concern" element={<ResultPage />}></Route>
         {/* make not found page */}
       </Routes>
     </BrowserRouter>
