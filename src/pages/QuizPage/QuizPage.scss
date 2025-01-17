@@ -1,0 +1,59 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/typography" as *;
+
+.quiz {
+  padding: 5rem 15rem 2rem 15rem;
+
+  &__flex {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 2rem 0 6rem 0;
+  }
+
+  &__option {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.75rem;
+    background-color: $secondary-colour;
+    height: 90px;
+    width: 90px;
+    border-radius: 8px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $primary-colour;
+      color: white;
+    }
+
+    &--active {
+      border: 3px solid $primary-colour;
+    }
+  }
+
+  &__button {
+    width: 20%;
+    align-self: center;
+    height: 32px;
+    border-radius: 8px;
+    border: none;
+    background-color: $secondary-colour;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $primary-colour;
+      color: white;
+    }
+  }
+
+  &__error {
+    color: red;
+    align-self: center;
+    margin-top: 2rem;
+  }
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}

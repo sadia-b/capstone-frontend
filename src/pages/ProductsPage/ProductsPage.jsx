@@ -1,23 +1,13 @@
 import ProductCard from "../../components/ProductCard/ProductCard";
-const baseURL = import.meta.env.VITE_API_URL;
 import { useEffect, useState } from "react";
-import axios from "axios";
 import "./ProductsPage.scss";
+import { fetchProducts } from "../../../utils/helperFunctions";
 
 export default function ProductsPage() {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    const fetchProducts = async () => {
-      try {
-        const response = await axios.get(`${baseURL}/products`);
-        console.log(response.data);
-        setProducts(response.data);
-      } catch (error) {
-        console.log(`Error retrieving products: ${error}`);
-      }
-    };
-    fetchProducts();
+    fetchProducts(setProducts);
   }, []);
 
   return (
