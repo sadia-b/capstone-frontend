@@ -1,32 +1,31 @@
 import "./ProductCard.scss";
 import { useState } from "react";
 
-export default function ProductCard({ product }) {
+export default function ProductCard({ product, favourite }) {
   const [favourited, setFavourited] = useState(false);
-  const [isFavourited, setIsFavourited] = useState(false);
+  const item = product || favourite;
 
   async function handleClick() {
     setFavourited(!favourited);
     console.log("like button clicked");
-    
   }
 
   return (
     <div className="product">
       <img
         className="product__img"
-        src={`http://localhost:8080/${product.photo}`}
-        alt={product.photoDescription}
+        src={`http://localhost:8080/${item.photo}`}
+        alt={item.photoDescription}
       />
       <div className="product__details">
-        <small className="product__text">{product.name}</small>
-        <small className="product__text">{product.brand}</small>
-        <small className="product__text">${product.price}</small>
-        <small className="product__text">{product.ingredient}</small>
-        <small className="product__text">{product.concern}</small>
+        <small className="product__text">{item.name}</small>
+        <small className="product__text">{item.brand}</small>
+        <small className="product__text">${item.price}</small>
+        <small className="product__text">{item.ingredient}</small>
+        <small className="product__text">{item.concern}</small>
         <a
           className="product__text product__link"
-          href={product.link}
+          href={item.link}
           target="_blank"
         >
           Buy{" "}
