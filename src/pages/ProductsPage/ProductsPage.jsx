@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import "./ProductsPage.scss";
 import { fetchProducts } from "../../../utils/helperFunctions";
 
-export default function ProductsPage() {
+export default function ProductsPage({ updateLikedStatus }) {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
@@ -17,7 +17,13 @@ export default function ProductsPage() {
   return (
     <div className="product-card">
       {products.map((product) => {
-        return <ProductCard key={product.id} product={product} />;
+        return (
+          <ProductCard
+            key={product.id}
+            product={product}
+            updateLikedStatus={updateLikedStatus}
+          />
+        );
       })}
     </div>
   );

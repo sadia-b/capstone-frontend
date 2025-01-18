@@ -3,7 +3,7 @@ import "./FavouritesPage.scss";
 import { fetchFavourites } from "../../../utils/helperFunctions";
 import ProductCard from "../../components/ProductCard/ProductCard";
 
-export default function FavouritesPage() {
+export default function FavouritesPage({ updateLikedStatus }) {
   const [favouriteProducts, setFavouriteProducts] = useState([]);
 
   useEffect(() => {
@@ -28,7 +28,13 @@ export default function FavouritesPage() {
   return (
     <div className="favourite">
       {favouriteProducts.map((favourite) => {
-        return <ProductCard key={favourite.id} favourite={favourite} />;
+        return (
+          <ProductCard
+            key={favourite.id}
+            favourite={favourite}
+            updateLikedStatus={updateLikedStatus}
+          />
+        );
       })}
     </div>
   );

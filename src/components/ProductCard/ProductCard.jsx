@@ -5,11 +5,16 @@ import {
   removeFavourites,
 } from "../../../utils/helperFunctions";
 
-export default function ProductCard({ product, favourite }) {
+export default function ProductCard({ product, favourite, updateLikedStatus }) {
   const item = product || favourite;
   const [favourited, setFavourited] = useState(item.liked);
 
   async function handleClick() {
+    const newLikedStatus = !favourited;
+    setFavourited(newLikedStatus);
+
+    updateLikedStatus(item.id, newLikedStatus);
+
     const favouriteProduct = {
       product_id: item.id,
       user_id: 1,
@@ -20,20 +25,14 @@ export default function ProductCard({ product, favourite }) {
         const newFavourite = await postFavourites(favouriteProduct);
         if (newFavourite) {
           setFavourited(true);
-          console.log(`Product ${item.id} added to favourites.`);
         }
       } else {
         await removeFavourites(item.id);
         setFavourited(false);
-        console.log(`Product ${item.id} added to favourites.`);
       }
     } catch (error) {
       console.error("Error toggling favourite status:", error);
     }
-
-    console.log(favourited);
-
-    console.log("like button clicked");
   }
 
   return (

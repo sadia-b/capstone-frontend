@@ -6,17 +6,32 @@ import HomePage from "./pages/HomePage/HomePage";
 import QuizPage from "./pages/QuizPage/QuizPage";
 import ResultPage from "./pages/ResultPage/ResultPage";
 import FavouritesPage from "./pages/FavouritesPage/FavouritesPage";
+import { useState } from "react";
 
 function App() {
+  const [likedProducts, setLikedProducts] = useState([]);
+
+  const updateLikedStatus = (productId, liked) => {
+    setLikedProducts((prev) =>
+      liked ? [...prev, productId] : prev.filter((id) => id !== productId)
+    );
+  };
+
   return (
     <BrowserRouter>
       <Header />
       <Routes>
         <Route path="/" element={<HomePage />}></Route>
         <Route path="/quiz" element={<QuizPage />}></Route>
-        <Route path="/products" element={<ProductsPage />}></Route>
+        <Route
+          path="/products"
+          element={<ProductsPage updateLikedStatus={updateLikedStatus} />}
+        ></Route>
         <Route path="/results/:concern" element={<ResultPage />}></Route>
-        <Route path="/my-products" element={<FavouritesPage />}></Route>
+        <Route
+          path="/my-products"
+          element={<FavouritesPage updateLikedStatus={updateLikedStatus} />}
+        ></Route>
         {/* make not found page */}
       </Routes>
     </BrowserRouter>
