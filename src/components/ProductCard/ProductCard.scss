@@ -36,7 +36,16 @@
     padding: 4px 8px;
   }
 
+  &__button {
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
   &__like {
+    &:hover {
+      fill: black;
+    }
     &--active {
       fill: $accent-colour;
     }

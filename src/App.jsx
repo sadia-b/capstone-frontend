@@ -5,6 +5,7 @@ import Header from "./components/Header/Header";
 import HomePage from "./pages/HomePage/HomePage";
 import QuizPage from "./pages/QuizPage/QuizPage";
 import ResultPage from "./pages/ResultPage/ResultPage";
+import FavouritesPage from "./pages/FavouritesPage/FavouritesPage";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/quiz" element={<QuizPage />}></Route>
         <Route path="/products" element={<ProductsPage />}></Route>
         <Route path="/results/:concern" element={<ResultPage />}></Route>
+        <Route path="/my-products" element={<FavouritesPage />}></Route>
         {/* make not found page */}
       </Routes>
     </BrowserRouter>

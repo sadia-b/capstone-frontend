@@ -4,7 +4,6 @@ const baseURL = import.meta.env.VITE_API_URL;
 const fetchProducts = async (stateVariable) => {
   try {
     const response = await axios.get(`${baseURL}/products`);
-    console.log(response.data);
     stateVariable(response.data);
   } catch (error) {
     console.log(`Error retrieving products: ${error}`);
@@ -20,4 +19,15 @@ const fetchProductsByConcern = async (stateVariable, productConcern) => {
     console.log(`Error retrieving products: ${error}`);
   }
 };
-export { fetchProducts, fetchProductsByConcern };
+
+const fetchFavourites = async (stateVariable) => {
+  try {
+    const response = await axios.get(`${baseURL}/favourite`);
+    stateVariable(response.data);
+  } catch (error) {
+    console.log(`Error retrieving favourites: ${error}`);
+  }
+  return stateVariable;
+};
+
+export { fetchProducts, fetchProductsByConcern, fetchFavourites };

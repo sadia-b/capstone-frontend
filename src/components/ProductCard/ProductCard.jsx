@@ -1,6 +1,16 @@
 import "./ProductCard.scss";
+import { useState } from "react";
 
 export default function ProductCard({ product }) {
+  const [favourited, setFavourited] = useState(false);
+  const [isFavourited, setIsFavourited] = useState(false);
+
+  async function handleClick() {
+    setFavourited(!favourited);
+    console.log("like button clicked");
+    
+  }
+
   return (
     <div className="product">
       <img
@@ -36,9 +46,11 @@ export default function ProductCard({ product }) {
             </g>
           </svg>
         </a>
-        <small className="product__text">
+        <div className="product__text product__button" onClick={handleClick}>
           <svg
-            className="product__like"
+            className={`product__like ${
+              favourited ? "product__like--active" : ""
+            }`}
             width="14px"
             height="12px"
             viewBox="0 0 20 20"
@@ -50,7 +62,7 @@ export default function ProductCard({ product }) {
               stroke="#000000"
             />
           </svg>
-        </small>
+        </div>
       </div>
     </div>
   );

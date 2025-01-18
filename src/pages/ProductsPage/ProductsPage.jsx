@@ -10,6 +10,10 @@ export default function ProductsPage() {
     fetchProducts(setProducts);
   }, []);
 
+  if (!products) {
+    return <p>Loading products...</p>;
+  }
+
   return (
     <div className="product-card">
       {products.map((product) => {
