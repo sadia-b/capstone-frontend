@@ -1,12 +1,38 @@
 import "./ProductCard.scss";
 import { useState } from "react";
+import {
+  postFavourites,
+  removeFavourites,
+} from "../../../utils/helperFunctions";
 
 export default function ProductCard({ product, favourite }) {
-  const [favourited, setFavourited] = useState(false);
   const item = product || favourite;
+  const [favourited, setFavourited] = useState(item.liked);
 
   async function handleClick() {
-    setFavourited(!favourited);
+    const favouriteProduct = {
+      product_id: item.id,
+      user_id: 1,
+    };
+
+    try {
+      if (!favourited) {
+        const newFavourite = await postFavourites(favouriteProduct);
+        if (newFavourite) {
+          setFavourited(true);
+          console.log(`Product ${item.id} added to favourites.`);
+        }
+      } else {
+        await removeFavourites(item.id);
+        setFavourited(false);
+        console.log(`Product ${item.id} added to favourites.`);
+      }
+    } catch (error) {
+      console.error("Error toggling favourite status:", error);
+    }
+
+    console.log(favourited);
+
     console.log("like button clicked");
   }
 

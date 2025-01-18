@@ -30,4 +30,26 @@ const fetchFavourites = async (stateVariable) => {
   return stateVariable;
 };
 
-export { fetchProducts, fetchProductsByConcern, fetchFavourites };
+const postFavourites = async (data) => {
+  try {
+    await axios.post(`${baseURL}/favourite`, data);
+  } catch (error) {
+    console.log(`Error favouriting product: ${error}`);
+  }
+};
+
+const removeFavourites = async (id) => {
+  try {
+    await axios.delete(`${baseURL}/favourite/${id}`);
+  } catch (error) {
+    console.log(`Error removing favourite: ${error}`);
+  }
+};
+
+export {
+  fetchProducts,
+  fetchProductsByConcern,
+  fetchFavourites,
+  postFavourites,
+  removeFavourites,
+};
