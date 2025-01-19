@@ -7,6 +7,7 @@ import QuizPage from "./pages/QuizPage/QuizPage";
 import ResultPage from "./pages/ResultPage/ResultPage";
 import FavouritesPage from "./pages/FavouritesPage/FavouritesPage";
 import { useState } from "react";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   const [likedProducts, setLikedProducts] = useState([]);
@@ -34,6 +35,7 @@ function App() {
         ></Route>
         {/* make not found page */}
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 }
