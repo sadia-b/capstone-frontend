@@ -1,3 +1,5 @@
+import "./ResultCard.scss";
+
 export default function ResultCard({ productData }) {
   return (
     <div className="result-card">
