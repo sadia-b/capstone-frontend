@@ -9,6 +9,7 @@ import ResultPage from "./pages/ResultPage/ResultPage";
 import FavouritesPage from "./pages/FavouritesPage/FavouritesPage";
 import { useState } from "react";
 import Footer from "./components/Footer/Footer";
+import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 
 function App() {
   const [likedProducts, setLikedProducts] = useState([]);
@@ -34,6 +35,7 @@ function App() {
           path="/my-products"
           element={<FavouritesPage updateLikedStatus={updateLikedStatus} />}
         ></Route>
+        <Route path="*" element={<NotFoundPage />}></Route>
         {/* make not found page */}
       </Routes>
       <Footer />
