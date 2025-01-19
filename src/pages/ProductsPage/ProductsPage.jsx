@@ -21,6 +21,7 @@ export default function ProductsPage({ updateLikedStatus }) {
           <ProductCard
             key={product.id}
             product={product}
+            setProducts={setProducts}
             updateLikedStatus={updateLikedStatus}
           />
         );
