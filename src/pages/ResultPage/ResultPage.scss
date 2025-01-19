@@ -1,2 +1,7 @@
 @use "../../styles/partials/variables" as *;
 @use "../../styles/partials/typography" as *;
+
+.results {
+  background-color: $background-colour;
+  padding: 5rem 20rem;
+}

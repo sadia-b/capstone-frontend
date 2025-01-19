@@ -25,9 +25,24 @@ export default function ResultPage() {
 
   return (
     <div className="results">
-      {sortedProducts.map((productData) => (
-        <ResultCard key={productData.id} productData={productData} />
-      ))}
+      {sortedProducts.map((productData) => {
+        const order = [
+          "Cleanser",
+          "Toner",
+          "Serum",
+          "Mask",
+          "Moisturizer",
+          "SPF",
+        ];
+        const productOrder = order.indexOf(productData.type) + 1;
+        return (
+          <ResultCard
+            key={productData.id}
+            productData={productData}
+            productOrder={productOrder}
+          />
+        );
+      })}
     </div>
   );
 }

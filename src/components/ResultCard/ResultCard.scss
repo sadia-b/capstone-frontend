@@ -2,4 +2,78 @@
 
 .result-card {
   background-color: $primary-colour;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 4rem;
+  border-radius: 16px;
+}
+
+.card {
+  &__section {
+    display: flex;
+  }
+
+  &__left {
+    width: 40%;
+  }
+
+  &__title {
+    color: white;
+    padding-bottom: 1rem;
+  }
+
+  &__image-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    width: 300px;
+    height: 300px;
+    border-radius: 16px;
+  }
+
+  &__image {
+    height: 250px;
+    border-radius: 16px;
+  }
+
+  &__right {
+    padding: 3rem;
+    background-color: $secondary-colour;
+    height: 300px;
+    border-radius: 16px;
+    width: 500px;
+  }
+
+  &__list {
+    list-style-type: none;
+
+    &--padding {
+      padding-top: 2rem;
+    }
+
+    &--bold {
+      font-weight: 700;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: black;
+  }
+
+  &__button-section {
+    margin-top: 2rem;
+  }
+
+  &__button {
+    height: 30px;
+    width: 80px;
+    border-radius: 8px;
+    border: 2px solid $primary-colour;
+    background-color: $accent-colour;
+  }
 }
