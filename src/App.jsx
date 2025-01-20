@@ -36,7 +36,6 @@ function App() {
           element={<FavouritesPage updateLikedStatus={updateLikedStatus} />}
         ></Route>
         <Route path="*" element={<NotFoundPage />}></Route>
-        {/* make not found page */}
       </Routes>
       <Footer />
     </BrowserRouter>

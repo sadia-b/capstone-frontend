@@ -12,11 +12,13 @@
   padding-bottom: 1rem;
   border-radius: 20px;
   box-shadow: 1px 1px 10px grey;
+  margin: 16px 0;
 
   &__img {
     height: 230px;
     margin-bottom: 8px;
     border-radius: 20px 20px 0 0;
+    background-color: white;
   }
 
   &__details {
@@ -34,6 +36,7 @@
     margin: 0.25rem;
     border-radius: 8px;
     padding: 4px 8px;
+    background-color: $background-colour;
   }
 
   &__button {

@@ -1,6 +1,12 @@
+@use "../../styles/partials/variables" as *;
+
 .product-card {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   padding: 2rem 5.2637rem;
+}
+
+.product-page {
+  background-color: $background-colour;
 }

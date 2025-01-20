@@ -1,6 +1,11 @@
 @use "../../styles/partials/variables" as *;
 @use "../../styles/partials/typography" as *;
 
+.quiz-page {
+  background-color: $background-colour;
+  padding-bottom: 80px;
+}
+
 .quiz {
   padding: 5rem 15rem 2rem 15rem;
 

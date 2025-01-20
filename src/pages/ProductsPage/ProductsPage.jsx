@@ -15,17 +15,19 @@ export default function ProductsPage({ updateLikedStatus }) {
   }
 
   return (
-    <div className="product-card">
-      {products.map((product) => {
-        return (
-          <ProductCard
-            key={product.id}
-            product={product}
-            setProducts={setProducts}
-            updateLikedStatus={updateLikedStatus}
-          />
-        );
-      })}
+    <div className="product-page">
+      <div className="product-card">
+        {products.map((product) => {
+          return (
+            <ProductCard
+              key={product.id}
+              product={product}
+              setProducts={setProducts}
+              updateLikedStatus={updateLikedStatus}
+            />
+          );
+        })}
+      </div>
     </div>
   );
 }

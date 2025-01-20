@@ -1,7 +1,17 @@
+@use "../../styles/partials/variables" as *;
+
 .favourite {
+  background-color: $background-colour;
+  padding: 20px 80px 80px 80px;
+  display: flex;
+  justify-content: flex-start;
+  gap: 2rem;
+
   &__empty {
     font-weight: 400;
     font-style: italic;
     padding: 5rem 84.3px;
+    background-color: $background-colour;
+    padding-bottom: 500px;
   }
 }
