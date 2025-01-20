@@ -78,7 +78,7 @@ export default function EditProductModal({
     <div>
       <div className="modal__overlay"></div>
       <div className="modal">
-        <h3>Edit Product</h3>
+        <h3 className="modal__title">Edit Product</h3>
         <form onSubmit={handleSubmit} className="edit">
           <div className="edit__wrapper">
             <label className="edit__label">Name</label>
