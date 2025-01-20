@@ -1,6 +1,7 @@
 import "./ProductCard.scss";
 import { useState } from "react";
 import {
+  fetchFavourites,
   postFavourites,
   removeFavourites,
 } from "../../../utils/helperFunctions";
@@ -12,6 +13,7 @@ export default function ProductCard({
   favourite,
   updateLikedStatus,
   setProducts,
+  setFavouriteProducts,
 }) {
   const item = product || favourite;
   const [favourited, setFavourited] = useState(item.liked);
@@ -44,6 +46,7 @@ export default function ProductCard({
       } else {
         await removeFavourites(item.id);
         setFavourited(false);
+        await fetchFavourites(setFavouriteProducts);
       }
     } catch (error) {
       console.error("Error toggling favourite status:", error);

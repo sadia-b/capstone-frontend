@@ -32,6 +32,7 @@ export default function FavouritesPage({ updateLikedStatus }) {
           <ProductCard
             key={favourite.id}
             favourite={favourite}
+            setFavouriteProducts={setFavouriteProducts}
             updateLikedStatus={updateLikedStatus}
           />
         );
